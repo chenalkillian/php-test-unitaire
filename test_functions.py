@@ -97,6 +97,46 @@ class TestFonctions(unittest.TestCase):
         """Mot de passe sans chiffre"""
         self.assertFalse(valider_mot_de_passe("Abcdefgh"))
 
+    # Exceptions pour additionner
+    def test_additionner_type_error(self):
+        with self.assertRaises(TypeError):
+            additionner("a", 2)
+
+    # Exceptions pour est_pair
+    def test_est_pair_type_error(self):
+        with self.assertRaises(TypeError):
+            est_pair(2.5)
+        with self.assertRaises(TypeError):
+            est_pair("4")
+
+    # Exceptions pour valider_email
+    def test_valider_email_type_error(self):
+        with self.assertRaises(TypeError):
+            valider_email(123)
+
+    # Exceptions pour calculer_moyenne
+    def test_calculer_moyenne_type_error(self):
+        with self.assertRaises(TypeError):
+            calculer_moyenne("pas une liste")
+    def test_calculer_moyenne_value_error(self):
+        with self.assertRaises(ValueError):
+            calculer_moyenne([10, "a", 20])
+
+    # Exceptions pour convertir_temperature
+    def test_convertir_temperature_type_error(self):
+        with self.assertRaises(TypeError):
+            convertir_temperature("chaud")
+
+    # Exceptions pour diviser
+    def test_diviser_type_error(self):
+        with self.assertRaises(TypeError):
+            diviser("10", 2)
+
+    # Exceptions pour valider_mot_de_passe
+    def test_valider_mot_de_passe_type_error(self):
+        with self.assertRaises(TypeError):
+            valider_mot_de_passe(12345678)
+
 # Permet d'exécuter les tests
 if __name__ == '__main__':
     unittest.main()
